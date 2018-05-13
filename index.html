@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>League of Legend | Ngoc Quy Hoang 's Game</title>
+		<script src="./javascript/jquery-2.1.4.min.js" type="text/javascript"></script>
+		<script src="./javascript/jquery.flip.min.js" type="text/javascript"></script>
+		<script src="./javascript/game-function.js" type="text/javascript"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+		<!-- add css -->
+		<link rel="stylesheet" type="text/css" href="./css/styles.css" />
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css" />
+		<!-- add css font -->
+		<link rel="stylesheet" href="./fonts/font-awesome/css/font-awesome.min.css">
+		<!-- add favico -->
+		<link rel="shortcut icon" href="./images/favico.png" />
+	</head>
+	<body>
+		<!-- background video -->
+		<div class="background-video">
+			<video autoplay loop poster="./images/logo-league-of-legend-game.png" class="tristana-dragon">
+			    <source src="./multimedia/video-background/background-video.mp4" type="video/mp4">
+			</video>
+		</div>
+		<!-- control bar -->
+		<div class="control-bar">
+			<p class="pause"><i onclick="gameControl()" class="fa fa-pause-circle"></i></p>
+			<p class="mute"><i onclick="muteAudio()" class="fa fa-volume-up"></i></p>
+		</div>
+		<!-- resume screen -->
+		<div class="pause-game container">
+			<div class="wraper-box">
+				<img class="lol-logo" src="./images/logo-league-of-legend-game.png">
+				<center>
+					<i class="fa fa-play-circle" onclick="resumeGame()"></i>
+					<i class="fa fa-repeat" onclick="resetGame()"></i>
+				</center>
+			</div>
+		</div>
+		<!-- select lever -->
+		<div class="select-lever container">
+			<div class="wraper-box">
+				<img class="lol-logo" src="./images/logo-league-of-legend-game.png">
+				<p>Please choose play model</p>
+				<ul class="play-model">
+					<li onclick="startGame(1)" >Easy</li>
+					<li onclick="startGame(2)" >Nomal</li>
+					<li onclick="startGame(3)" >Hard</li>
+				</ul>
+			</div>
+		</div>
+		<!-- end game  -->
+		<div class="end-game container" >
+			<div class="wraper-box">
+				<img class="lol-logo" src="./images/logo-league-of-legend-game.png">
+				<p class="win-lose">You are <span></span></p>
+				<p class="score-end">You achieved <span class="score"></span> points in <span class="time-end-game"></span> seconds</p>
+				<p class="play-again" onclick="resetGame()">Play again</p>
+			</div>
+		</div>
+		<!-- card content -->
+		<div class="card-content">
+			<!-- header bar -->
+			<div class="game-head-bar">
+				<p>Score <span id="game-score-number">0</span></p>
+				<div id="game-time-bar"></div>
+				<p id="timeValue">00,00</p>
+				<!-- <progress id="game-time-bar" value="80" max="100"></progress> -->
+				<div class="clear-fix"></div>
+			</div>
+			<!-- game card content -->
+			<div class="game-card">
+				<div class="game-card-box">
+					<!-- line 1 -->
+					<div class="card" id="1"> 
+						<div class="front"></div> 
+						<div class="back"></div> 
+					</div>
+					<div class="card" id="2"> 
+						<div class="front"></div> 
+						<div class="back"></div> 
+					</div>
+					<div class="card" id="3"> 
+						<div class="front"></div> 
+						<div class="back"></div> 
+					</div>
+					<div class="card" id="4"> 
+						<div class="front"></div> 
+						<div class="back"></div> 
+					</div>
+					<div class="card" id="5"> 
+						<div class="front"></div> 
+						<div class="back"></div> 
+					</div>
+					<div class="card" id="6"> 
+						<div class="front"></div> 
+						<div class="back"></div> 
+					</div>
+					<div class="card" id="7"> 
+						<div class="front"></div> 
+						<div class="back"></div> 
+					</div>
+					<div class="card" id="8"> 
+						<div class="front"></div> 
+						<div class="back"></div> 
+					</div>
+					<div class="clear-fix"></div>
+					<!-- line 2 -->
+					<div class="card" id="9"> 
+						<div class="front"></div> 
+						<div class="back"></div> 
+					</div>
+					<div class="card" id="10"> 
+						<div class="front"></div> 
+						<div class="back"></div> 
+					</div>
+					<div class="card" id="11"> 
+						<div class="front"></div> 
+						<div class="back"></div> 
+					</div>
+					<div class="card" id="12"> 
+						<div class="front"></div> 
+						<div class="back"></div> 
+					</div>
+					<div class="card" id="13"> 
+						<div class="front"></div> 
+						<div class="back"></div> 
+					</div>
+					<div class="card" id="14"> 
+						<div class="front"></div> 
+						<div class="back"></div> 
+					</div>
+					<div class="card" id="15"> 
+						<div class="front"></div> 
+						<div class="back"></div> 
+					</div>
+					<div class="card" id="16"> 
+						<div class="front"></div> 
+						<div class="back"></div> 
+					</div>
+					<div class="clear-fix"></div>
+					<!-- line 3 -->
+					<div class="card" id="17"> 
+						<div class="front"></div> 
+						<div class="back"></div> 
+					</div>
+					<div class="card" id="18"> 
+						<div class="front"></div> 
+						<div class="back"></div> 
+					</div>
+					<div class="card" id="19"> 
+						<div class="front"></div> 
+						<div class="back"></div> 
+					</div>
+					<div class="card" id="20"> 
+						<div class="front"></div> 
+						<div class="back"></div> 
+					</div>
+					<div class="card" id="21"> 
+						<div class="front"></div> 
+						<div class="back"></div> 
+					</div>
+					<div class="card" id="22"> 
+						<div class="front"></div> 
+						<div class="back"></div> 
+					</div>
+					<div class="card" id="23"> 
+						<div class="front"></div> 
+						<div class="back"></div> 
+					</div>
+					<div class="card" id="14"> 
+						<div class="front"></div> 
+						<div class="back"></div> 
+					</div>
+					<div class="clear-fix"></div>
+				</div>
+			</div>
+		</div>
+		<!-- box over -->
+		<div class="over-proteced-box"></div>
+	</body>
+</html>
